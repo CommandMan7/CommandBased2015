@@ -13,7 +13,7 @@ public class Camera extends CommandBase {
     protected void initialize() {
     	/*!< Code here is ran when ExampleCommand.initialize() is called. */
     	Vision.pushCam1();
-    	//Vision.pushCam2();
+    	Vision.pushCam2();
     }
 
     protected void execute() {

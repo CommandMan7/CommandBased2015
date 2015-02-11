@@ -55,6 +55,7 @@ public class Robot extends IterativeRobot {
         autonomousCommand = new ExampleCommand(); /*!< Sets autonomousCommand to an instance of ExampleCommand. autonomousCommand needs its own command. */
         drive = new Drive(); /*!< Bind drive to the command type Drive set in the Drive.java file. */
         camera = new Camera();
+        camera.start();
     }
     
     public void autonomousInit() {
@@ -68,7 +69,6 @@ public class Robot extends IterativeRobot {
     public void teleopInit() {
         //if (autonomousCommand != null) autonomousCommand.cancel();/*!< Checks if the autonomousCommand has been given. If true, it schedules autonomousCommand.cancel(). */
     	drive.start(); /*!< Schedules drive.start(). */
-    	camera.start();
     	
     }
     

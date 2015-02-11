@@ -38,7 +38,8 @@ public class Drive extends CommandBase {
 	boolean left = false;
 	boolean right = true;
     public Drive() {
-    	//requires(chassis); /*!< Checks if chassis exists, and does not run if it is missing. */
+    	requires(chassis); /*!< Checks if chassis exists, and does not run if it is missing. */
+    	requires(lift);
     	//leftStick = oi.getLeftStick(); /*!< Gets an instance of leftStick from OI.java. */
     	//rightStick = oi.getRightStick(); /*!< Gets an instance of rightStick from OI.java. */
     	leftStick = new Joystick(0);
@@ -74,9 +75,12 @@ public class Drive extends CommandBase {
     	
     	left_Bumper.whenPressed(new FullLift());
     	right_Bumper.whenPressed(new EngageTote());
+    	double up = controller.getRawAxis(3);
+    	double down = controller.getRawAxis(2);
     	double left = leftStick.getRawAxis(RobotMap.C_LEFTAXIS); /*!< Sets left to the current position of the left joystick's axis # C_LEFTAXIS. */
     	double right = -rightStick.getRawAxis(RobotMap.C_RIGHTAXIS); /*!< Sets right to the current position of the right joystick's axis # C_RIGHTAXIS. */
     	chassis.tankDrive(left, right); /*!< Sets the values of the chassis.tankDrive to the current joystick values. */
+    	lift.movement(up,down);
     }
 
     protected boolean isFinished() { 

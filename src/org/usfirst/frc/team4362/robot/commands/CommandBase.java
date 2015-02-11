@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team4362.robot.OI;
 import org.usfirst.frc.team4362.robot.subsystems.Chassis;
+import org.usfirst.frc.team4362.robot.subsystems.Lift;
 import org.usfirst.frc.team4362.robot.subsystems.Sols;
 import org.usfirst.frc.team4362.robot.subsystems.AutonDrive;
 import org.usfirst.frc.team4362.robot.subsystems.Vision;
@@ -20,6 +21,7 @@ public abstract class CommandBase extends Command {
 	public static Chassis chassis; /*!< Creates a new Chassis named chassis */
 	public static AutonDrive AutonDrive;
 	public static Vision Vision;
+	public static Lift lift;
     public CommandBase() { /*!< Uses requires() to declare subsystem dependencies. */
     	super(); /*!< Checks if super() exists, and does not run if it is missing. */
     }
@@ -30,6 +32,7 @@ public abstract class CommandBase extends Command {
     	chassis = new Chassis(); /*!< Sets chassis to a new Chassis from the Chassis.java file. */
     	AutonDrive = new AutonDrive();
     	Vision = new Vision();
+    	lift = new Lift();
     }
 
     public CommandBase(String name){
