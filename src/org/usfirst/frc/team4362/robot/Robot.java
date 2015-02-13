@@ -3,6 +3,7 @@ package org.usfirst.frc.team4362.robot;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -46,7 +47,7 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand; /*!< Creates a new command named autonomousCommand */
     private Command drive; /*!< Creates a new private command named drive */
     private Command camera;
-
+    
     public void robotInit() {
     	CommandBase.init();
 		oi = new OI(); /*!< Sets oi to a new OI from the OI.java file in this same package */

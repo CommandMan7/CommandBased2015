@@ -22,6 +22,8 @@ public abstract class CommandBase extends Command {
 	public static AutonDrive AutonDrive;
 	public static Vision Vision;
 	public static Lift lift;
+	public static Drive Drive;
+	public static Sols Sols;
     public CommandBase() { /*!< Uses requires() to declare subsystem dependencies. */
     	super(); /*!< Checks if super() exists, and does not run if it is missing. */
     }
@@ -33,6 +35,8 @@ public abstract class CommandBase extends Command {
     	AutonDrive = new AutonDrive();
     	Vision = new Vision();
     	lift = new Lift();
+    	Drive = new Drive();
+    	Sols = new Sols();
     }
 
     public CommandBase(String name){
