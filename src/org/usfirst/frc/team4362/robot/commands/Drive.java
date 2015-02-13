@@ -45,7 +45,8 @@ public class Drive extends CommandBase {
 	boolean right = true;
 	boolean lightonoff = false;
 	int light = 0;
-	DigitalInput Top, Bottom;
+	DigitalInput Top;
+	DigitalInput Bottom;
     public Drive() {
     	requires(chassis); /*!< Checks if chassis exists, and does not run if it is missing. */
     	requires(lift);
@@ -53,8 +54,8 @@ public class Drive extends CommandBase {
     	Small = new DoubleSolenoid(4,2);
     	Grab = new DoubleSolenoid(3,6);
     	Light = new Relay(0);
-    	Top = new DigitalInput(6);
-    	Bottom = new DigitalInput(6);
+    	Top = new DigitalInput(4);
+    	Bottom = new DigitalInput(5);
     	LargeDown = new Solenoid(1);
     	//leftStick = oi.getLeftStick(); /*!< Gets an instance of leftStick from OI.java. */
     	//rightStick = oi.getRightStick(); /*!< Gets an instance of rightStick from OI.java. */

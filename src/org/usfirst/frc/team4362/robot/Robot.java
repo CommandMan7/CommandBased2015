@@ -47,7 +47,6 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand; /*!< Creates a new command named autonomousCommand */
     private Command drive; /*!< Creates a new private command named drive */
     private Command camera;
-    
     public void robotInit() {
     	CommandBase.init();
 		oi = new OI(); /*!< Sets oi to a new OI from the OI.java file in this same package */
@@ -55,8 +54,8 @@ public class Robot extends IterativeRobot {
 		compressor.start(); /*!< Starts compressor. */
         autonomousCommand = new ExampleCommand(); /*!< Sets autonomousCommand to an instance of ExampleCommand. autonomousCommand needs its own command. */
         drive = new Drive(); /*!< Bind drive to the command type Drive set in the Drive.java file. */
-        camera = new Camera();
-        camera.start();
+        //camera = new Camera();
+        //camera.start();
     }
     
     public void autonomousInit() {
